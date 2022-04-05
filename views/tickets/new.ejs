@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tickets</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+      <a href="http://localhost:3000/flights/new"class="active">ADD FLIGHT</a>
+      <a href="http://localhost:3000/flights"class="active">ALL FLIGHT</a>
+      </nav>
+      <main>
+    <div class="newticket">
+      <h1>New Ticket</h1>
+      <form
+        action="/flights/<%= flight._id %>/tickets/new"
+        method="POST"
+        id="ticketId"
+      >
+        <div>
+          <input
+            type="text"
+            name="seat"
+            required
+            pattern="[A-F][1-9]\d?"
+            placeholder="Ex. A1"
+          />
+        </div>
+        <div>
+          <input type="text" name="price" placeholder="Ex. 12" />
+        </div>
+        <div>
+          <input type="submit" value="Add Ticket" id="mbtn" />
+        </div>
+      </form>
+    </div>
+    </main>
+  </body>
+</html>
